@@ -3,8 +3,17 @@ package com.thinkaurelius.titan.hadoop;
 import com.thinkaurelius.titan.CassandraStorageSetup;
 import com.thinkaurelius.titan.diskstorage.configuration.ModifiableConfiguration;
 import com.thinkaurelius.titan.diskstorage.configuration.WriteConfiguration;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.tinkerpop.gremlin.structure.Graph;
 import org.apache.tinkerpop.gremlin.structure.util.GraphFactory;
+import org.junit.Before;
+import java.io.File;
+import java.io.IOException;
+    @Before
+    public void setup() throws IOException {
+        FileUtils.deleteDirectory(new File("output"));
+    }
 
 public class CassandraInputFormatIT extends AbstractInputFormatIT {
 
