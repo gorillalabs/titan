@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.thinkaurelius.titan</groupId>
+        <groupId>gorillalabs</groupId>
         <artifactId>titan</artifactId>
-        <version>1.1.0g-SNAPSHOT</version>
+        <version>1.1.0g</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <packaging>pom</packaging>
     <artifactId>titan-dist</artifactId>
     <name>Titan-Dist: Tar and Zip Archives</name>
-    <url>http://thinkaurelius.github.com/titan/</url>
+    <url>http://gorillalabs.github.com/titan/</url>
 
     <properties>
         <top.level.basedir>${project.basedir}/..</top.level.basedir>
@@ -156,13 +156,13 @@
 
     <build>
         <!-- Used during release:perform to upload to S3 -->
-        <extensions>
+        <!--extensions>
             <extension>
                 <groupId>org.kuali.maven.wagons</groupId>
                 <artifactId>maven-s3-wagon</artifactId>
                 <version>${kuali.s3.wagon.version}</version>
             </extension>
-        </extensions>
+        </extensions -->
 
         <plugins>
             <!--
@@ -523,7 +523,7 @@
                 </property>
             </activation>
 
-            <build>
+            <!--build>
                 <plugins>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
@@ -538,14 +538,14 @@
                                 </goals>
                                 <configuration>
                                     <fromDir>${htmlchunk.output.dir}</fromDir>
-                                    <serverId>aurelius.s3</serverId> <!-- your ~/.m2/settings.xml must match -->
+                                    <serverId>aurelius.s3</serverId>  your ~/.m2/settings.xml must match
                                     <url>s3://s3.thinkaurelius.com/docs/titan/${project.version}</url>
                                 </configuration>
                             </execution>
                         </executions>
                     </plugin>
                 </plugins>
-            </build>
+            </build-->
         </profile>
 
         <profile>
@@ -691,7 +691,7 @@
                             </executions>
                         </plugin>
 
-                        <plugin>
+                        <!-- plugin>
                             <groupId>org.codehaus.mojo</groupId>
                             <artifactId>wagon-maven-plugin</artifactId>
                             <executions>
@@ -704,12 +704,12 @@
                                     <configuration>
                                         <fromDir>${project.build.directory}</fromDir>
                                         <includes>titan*.tar.bz2.asc,titan*.zip.asc,titan*.zip,titan*.tar.bz2</includes>
-                                        <serverId>aurelius.s3</serverId> <!-- your ~/.m2/settings.xml must match -->
+                                        <serverId>aurelius.s3</serverId> your ~/.m2/settings.xml must match
                                         <url>s3://s3.thinkaurelius.com/downloads/titan/</url>
                                     </configuration>
                                 </execution>
                             </executions>
-                        </plugin>
+                        </plugin-->
 
                         <plugin>
                             <artifactId>maven-jar-plugin</artifactId>

@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.thinkaurelius.titan</groupId>
+        <groupId>gorillalabs</groupId>
         <artifactId>titan</artifactId>
-        <version>1.1.0g-SNAPSHOT</version>
+        <version>1.1.0g</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>titan-hbase-parent</artifactId>
     <packaging>pom</packaging>
     <name>Titan-HBase: Parent Module</name>
-    <url>http://thinkaurelius.github.com/titan/</url>
+    <url>http://gorillalabs.github.com/titan/</url>
     
     <modules>
         <module>titan-hbase-core</module>
@@ -30,18 +30,18 @@
     
     <dependencies>
         <dependency>
-            <groupId>com.thinkaurelius.titan</groupId>
+            <groupId>gorillalabs</groupId>
             <artifactId>titan-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.thinkaurelius.titan</groupId>
+            <groupId>gorillalabs</groupId>
             <artifactId>titan-test</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.thinkaurelius.titan</groupId>
+            <groupId>gorillalabs</groupId>
             <artifactId>titan-es</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
