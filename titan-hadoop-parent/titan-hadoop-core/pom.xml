@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.thinkaurelius.titan</groupId>
+        <groupId>gorillalabs</groupId>
         <artifactId>titan-hadoop-parent</artifactId>
-        <version>1.1.0g-SNAPSHOT</version>
+        <version>1.1.0g</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>titan-hadoop-core</artifactId>
     <name>Titan-Hadoop: Version-independent Core</name>
-    <url>http://thinkaurelius.github.com/titan/</url>
+    <url>http://gorillalabs.github.com/titan/</url>
 
     <properties>
         <top.level.basedir>${basedir}/../..</top.level.basedir>
@@ -106,7 +106,7 @@
                             </descriptors>
                         </configuration>
                     </execution>
-                    <execution>
+                    <!-- execution>
                         <id>assemble-example-data</id>
                         <phase>package</phase>
                         <goals>
@@ -118,7 +118,7 @@
                                 <descriptor>src/assembly/example-data.xml</descriptor>
                             </descriptors>
                         </configuration>
-                    </execution>
+                    </execution -->
                     <!-- Inherited the Hadoop job jar assembly from the parent, but this is
                          only useful in the titan-hadoop-1 and -2 modules.  Disable it. -->
                     <execution>
