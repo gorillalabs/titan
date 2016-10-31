@@ -10,13 +10,13 @@ import org.apache.tinkerpop.gremlin.structure.util.GraphFactory;
 import org.junit.Before;
 import java.io.File;
 import java.io.IOException;
+
+
+public class CassandraInputFormatIT extends AbstractInputFormatIT {
     @Before
     public void setup() throws IOException {
         FileUtils.deleteDirectory(new File("output"));
     }
-
-public class CassandraInputFormatIT extends AbstractInputFormatIT {
-
     protected Graph getGraph() {
         return GraphFactory.open("target/test-classes/cassandra-read.properties");
     }

@@ -67,11 +67,7 @@ import org.elasticsearch.search.sort.SortOrder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.time.Instant;
@@ -681,7 +677,10 @@ public class ElasticSearchIndex implements IndexProvider {
                     for(BulkItemResponse response : bulkItemResponses.getItems()) {
                         //The document may have been deleted, which is OK
                         if(response.isFailed() && response.getFailure().getStatus() != RestStatus.NOT_FOUND) {
-                            log.error("Failed to execute ES query {}", response.getFailureMessage());
+                            StringWriter stackTraceString = new StringWriter();
+                            PrintWriter stackTrace = new PrintWriter(stackTraceString);
+                            response.getFailure().getCause().printStackTrace(stackTrace);
+                            log.error("Failed to execute ES query {} {}", response.getFailureMessage(), stackTraceString);
                             actualFailure = true;
                         }
                     }
